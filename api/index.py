@@ -17,7 +17,7 @@ def index():
     <title>heyBox</title>
     </head>
     <body>
-    <h2>刷新即可获取最新数据。</h2>
+    <h3>本站数据来自互联网，仅为方便玩家使用！不得用于任何商业用途。如有侵权请告知：TTATT</h3>
     """
     html_end = """
     </body>
@@ -33,10 +33,16 @@ def index():
     for singleData in trimData:
         try:
             nickName = singleData["user"]["username"]
+            nickName = "<b>" + nickName + "</b>"
         except Exception:
             nickName = "None"
         try:
             description = singleData["description"]
+            description = description.replace("Document", "")
+            description = description.replace("不限", "")
+            description = description.replace("要求语音", "<b>要求语音</b>")
+            description = description.replace("ID", "<b> ID：</b>")
+            description = description.replace("光等", "<b> 要求光等：</b>")
         except Exception:
             description = "None"
         try:
@@ -48,7 +54,7 @@ def index():
         except Exception:
             shareUrl = "None"
 
-        html_body += '&#9830;昵称：《{}》&#9830;标题：《{}》&#9830;描述：《{}》&#9830;<a target="_blank" href="{}">链接</a></br>'.format(
+        html_body += '<p>🤺{}喊话：{} 🍭 {} 🔗<a target="_blank" href="{}">帖子</a></p>'.format(
             nickName, title, description, shareUrl
         )
 
