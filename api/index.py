@@ -727,7 +727,9 @@ html_head = """
 html_end = """
 
 	</section>
-
+	<div>数据来自互联网，仅用作学习交流使用，如有侵权请联系</div>
+	<div class="powered-by">Powered by <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> | Created
+		by <a href="https://github.com/bigtear" target="_blank" rel="noopener">BigTear</a></div>
 	<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
 	<!-- pinterest_grid.js -->
 	<script type="text/javascript">
